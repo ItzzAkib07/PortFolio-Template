@@ -27,6 +27,7 @@ body {
   --textColor: #f0f0e6;
   --primary: #333333;
   --secondary: #0a0a0a;
+  --themeColor:#25b79f;
 }
 
 .theme-switch {
@@ -57,23 +58,33 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--heding1);
   transition: 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.slider img:nth-child(1){
+  height: 18px; 
+}
 .slider:before {
   position: absolute;
-  content: "";
+  content:"";
   height: 26px;
   width: 26px;
   left: 4px;
   bottom: 4px;
   background-color: white;
   transition: 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 input:checked + .slider {
-  background-color: var(--primary);
+  background-color: var(--secondary);
+  
 }
 
 input:checked + .slider:before {
