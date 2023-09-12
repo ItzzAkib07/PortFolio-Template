@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="Akib Mulla">
     <meta name="description" content="Portfolio website | Web Developer">
-    <meta name="keywords" content="Akib, Mulla, Akib Mulla, portfolio, css, javascript, software, coding,   programming, web, development, developer, frontend">
+    <meta name="keywords"
+        content="Akib, Mulla, Akib Mulla, portfolio, css, javascript, software, coding,   programming, web, development, developer, frontend">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Template</title>
     <link rel="stylesheet" href="style.css" />
@@ -30,11 +31,20 @@
                 <div>
                     <h1 class="navbar-brand">Akib Mulla</h1>
                 </div>
-                <ul class="menu-items">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#my-works">Portfolio</a></li>
-                    <li><a href="#contact-me">Contact</a></li>
-                </ul>
+
+                <div class="nav-right">
+                    <ul class="menu-items">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#my-works">Portfolio</a></li>
+                        <li><a href="#contact-me">Contact</a></li>
+                    </ul>
+                    <div class="theme-switch">
+                        <label class="switch">
+                            <input type="checkbox" id="theme-toggle">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
             </div>
         </nav>
         <div class="home-content" id="home-page">
@@ -171,6 +181,7 @@
             </div>
         </div>
     </section>
+
     <div class="contact" id="contact-me">
         <div class="container">
             <div class="contact-content">
@@ -186,6 +197,27 @@
             </div>
         </div>
     </div>
+
+
+    <!-- scroll top button  -->
+    <a href="#home-page" class="top"><img src="scroll-top-img.png" alt=""></a>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        const themeToggle = document.getElementById("theme-toggle");
+        const body = document.body;
+
+        themeToggle.addEventListener("change", () => {
+            if (themeToggle.checked) {
+                body.classList.add("dark-mode");
+            } else {
+                body.classList.remove("dark-mode");
+            }
+        });
+    </script>
+
     <script type="text/javascript">
         $(document).ready(function () {
             $(window).scroll(function () {
@@ -200,8 +232,22 @@
 
             });
         });
+
+
+        $(window).on('scroll load', function () {
+
+            $('#menu').removeClass('fa-times');
+            $('header').removeClass('toggle');
+
+            if ($(window).scrollTop() > 0) {
+                $('.top').show();
+            } else {
+                $('.top').hide();
+            }
+
+        });
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script>
         $(document).ready(function () {
             // Add smooth scrolling to all links
@@ -227,6 +273,7 @@
                 } // End if
             });
         });
+
     </script>
 </body>
 
